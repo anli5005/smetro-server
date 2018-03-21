@@ -48,7 +48,7 @@ mongoose.connection.once("open", () => {
           return req.query.lson ? res.send('{error = "not_found"}') : res.json({error: "not_found"});
         }
 
-        return req.query.lson ? res.send(`{ok = true, destination = ${trip.destination}}`) : res.json({
+        return req.query.lson ? res.send(`{ok = true, destination = "${trip.destination}"}`) : res.json({
           ok: true,
           destination: trip.destination
         });
